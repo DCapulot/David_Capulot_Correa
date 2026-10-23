@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>David Capulot Corrêa | Cibersegurança e Dados</title>
+<meta name="author" content="David Capulot Corrêa">
+<meta name="description" content="Estudante de Ciência da Computação em busca do primeiro estágio em Cibersegurança. Projetos em Python, detecção de fraudes com Machine Learning, redes, Linux e virtualização.">
+<meta property="og:title" content="David Capulot Corrêa | Cibersegurança e Dados">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+<header><div class="wrap"><nav>
+<b>DCC</b>
+<ul>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#formacao">Formação</a></li>
+<li><a href="#projetos">Projetos</a></li>
+<li><a href="#competencias">Competências</a></li>
+<li><a href="#certificados">Certificados</a></li>
+<li><a href="#experiencia">Experiência</a></li>
+<li><a href="#estudo">Estudo</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
+</nav></div></header>
+
+<main class="wrap">
+
+<!-- 1. APRESENTAÇÃO -->
+<section id="inicio" class="hero">
+<div>
+<div class="kicker">Segurança defensiva + dados</div>
+<h1>David Capulot Corrêa</h1>
+<p class="lead">Estudante de Ciência da Computação em busca do primeiro estágio ou vaga júnior em Cibersegurança. Uso Python para analisar dados e detectar anomalias, e estudo redes, Linux, virtualização e engenharia social.</p>
+<div class="btns">
+<a class="btn primary" href="#projetos">Ver projetos</a>
+<a class="btn" href="https://docs.google.com/document/d/1Fp1r3EgyPFsoufWaV4LVD4zfZk0xy-cH/export?format=pdf">Baixar currículo (PDF)</a>
+<a class="btn" href="https://www.linkedin.com/in/david-capulot-corr%C3%AAa-7865bb2a4/">LinkedIn</a>
+<a class="btn" href="https://github.com/DCapulot">GitHub</a>
+</div>
+<dl class="facts">
+<div><dt>Objetivo</dt><dd>Estágio ou vaga júnior em Cibersegurança / Segurança da Informação</dd></div>
+<div><dt>Formação</dt><dd>Ciência da Computação, Anhanguera (conclusão em dez/2026)</dd></div>
+<div><dt>Foco</dt><dd>Monitoramento, análise de logs e resposta a incidentes</dd></div>
+<div><dt>Local</dt><dd>São Gonçalo, RJ · presencial ou híbrido no Rio de Janeiro e região</dd></div>
+</dl>
+</div>
+<img class="foto" src="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Imagens/foto%20do%20usuario/DavidCapulot.jpeg" alt="Foto de David Capulot Corrêa" width="180" height="180">
+</section>
+
+<!-- 2. SOBRE MIM -->
+<section id="sobre">
+<h2>Sobre mim</h2>
+<p class="lead" style="margin-top:12px">Sou estudante de Ciência da Computação na Anhanguera (início em fevereiro de 2023, conclusão prevista em dezembro de 2026). Quero atuar com segurança defensiva: monitoramento, análise de logs e resposta a incidentes.</p>
+<p class="sub">Tenho base em desenvolvimento (HTML, CSS, JavaScript, Python, C e MySQL), redes de computadores, multimídia e Pacote Office e LibreOffice. Hoje aprofundo segurança da informação, redes e proteção de sistemas. Meu projeto mais completo une dados e segurança: um detector de fraudes que trata classes extremamente desbalanceadas e explica as decisões do modelo.</p>
+<p class="sub" style="margin-top:0">Gosto de unir programação, tecnologia e segurança para criar soluções criativas e funcionais. Aprendo na prática, documento o que faço e gosto de trabalhar em equipe. Fora da tecnologia, jogo basquete.</p>
+</section>
+
+<!-- 3. FORMAÇÃO -->
+<section id="formacao">
+<h2>Formação acadêmica</h2>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>Bacharelado em Ciência da Computação</h3><p><b>Anhanguera</b></p><p class="note">Fevereiro de 2023 a dezembro de 2026 (previsto) · Em andamento</p><a href="https://www.anhanguera.com">Site da instituição</a></div>
+<div class="card"><h3>Curso de Informática (280 h)</h3><p><b>Centro Interescolar Ulysses Guimarães</b></p><p class="note">2020 a 2023 · Concluído</p><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Curso%20de%20informatica.pdf">Ver certificado</a></div>
+</div>
+</section>
+
+<!-- 4. PROJETOS -->
+<section id="projetos">
+<h2>Projetos em destaque</h2>
+<p class="sub">Cada projeto indica o que foi feito e como foi validado. Projetos guiados por curso estão identificados como tal.</p>
+<div class="grid">
+<article class="card">
+<h3>Detecção de anomalias e fraudes em transações financeiras</h3>
+<ul class="tags"><li>Python</li><li>scikit-learn</li><li>XGBoost</li><li>SMOTE</li><li>SHAP</li></ul>
+<p><b>Problema:</b> em 284.807 transações de cartão, só ~0,17% são fraudes; um modelo comum acerta quase tudo e detecta pouco.</p>
+<p><b>O que fiz:</b> padronização e log1p, undersampling e SMOTE; comparei Regressão Logística, Random Forest e XGBoost; analisei o limiar de decisão (precisão, recall, F1); otimizei com GridSearchCV; expliquei o modelo com SHAP.</p>
+<div class="metric"><p><b>Resultado (teste: 148 fraudes em 85.443 transações):</b> XGBoost com precisão 0,94, recall 0,78 e F1 0,85. Random Forest: 0,84 / 0,76 / 0,79. Regressão Logística: 0,84 / 0,66 / 0,73.</p></div>
+<div class="links"><a href="https://github.com/DCapulot/detecao_de_anomalias_em_transacoes_em_python">Código e notebook</a><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Valida%C3%A7%C3%A3o%20Certificado%20python.pdf">Certificado</a></div>
+</article>
+<article class="card">
+<h3>DDGPW v3.0: linguagem de programação e IDE web</h3>
+<ul class="tags"><li>JavaScript</li><li>Lexer</li><li>Parser</li><li>AST</li><li>Interpreter</li></ul>
+<p><b>Objetivo:</b> entender como uma linguagem funciona por dentro, criando uma com sintaxe em português. Projeto pessoal, 2026.</p>
+<p><b>O que fiz:</b> implementei Lexer, Parser, AST e Interpreter, com variáveis, vetores, funções, condicionais, laços e operadores, e uma IDE que executa o código no navegador e mostra Console, Tokens, AST e a referência da linguagem.</p>
+<p><b>Aprendi:</b> análise léxica, sintática e semântica, e mensagens de erro adaptadas ao português.</p>
+<div class="links"><a href="https://dcapulot.github.io/DDGPW/">Demo</a><a href="https://github.com/DCapulot/DDGPW">Código</a></div>
+</article>
+<article class="card">
+<h3>Pedro: chatbot de atendimento da loja do Fluminense</h3>
+<ul class="tags"><li>Python</li><li>scikit-learn</li><li>Naive Bayes</li><li>PLN</li></ul>
+<p><b>Contexto:</b> projeto em grupo da Avaliação Oficial 01 da disciplina de Desenvolvimento de Chatbot (Centro Universitário Anhanguera de Niterói), 2026.</p>
+<p><b>Solução:</b> classificador Naive Bayes multinomial que reconhece 9 intenções, com normalização de texto, remoção de stopwords e respostas baseadas em um catálogo de produtos, mantendo o contexto da conversa.</p>
+<div class="links"><a href="https://github.com/DCapulot/Chatbot-Pedro">Código</a></div>
+</article>
+<article class="card">
+<h3>Previsão de score de crédito</h3>
+<ul class="tags"><li>Python</li><li>pandas</li><li>Random Forest</li><li>KNN</li></ul>
+<p><b>Contexto:</b> projeto guiado da Jornada Python (Hashtag Treinamentos), com base de clientes de um banco, 2026.</p>
+<p><b>Solução:</b> codificação das variáveis categóricas, separação treino/teste e comparação de dois modelos para classificar o score em Good, Standard ou Poor.</p>
+<div class="metric"><p><b>Resultado no conjunto de teste:</b> acurácia de 83% com Random Forest e 74% com KNN.</p></div>
+<div class="links"><a href="https://github.com/DCapulot/Projeto-de-Previsao-com-Machine-Learning">Código</a><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Valida%C3%A7%C3%A3o%20Certificado%20python.pdf">Certificado</a></div>
+</article>
+</div>
+
+<h3 style="margin-top:32px">Mais projetos</h3>
+<div class="more">
+<div class="card"><h3>Análise de cancelamento de clientes</h3><p>Exercício do curso Hashtag com base fornecida: limpeza e tratamento dos dados, gráficos e dashboards interativos em Python para identificar causas e propor ações; a simulação indicou queda da taxa de 56% para 18%.</p><a href="https://github.com/DCapulot/Analisando-Dados-com-Python">Código</a> · <a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Valida%C3%A7%C3%A3o%20Certificado%20python.pdf">Certificado</a></div>
+<div class="card"><h3>Automação de cadastro de produtos</h3><p>Automação em Python do cadastro de milhares de produtos, executada diária e sob demanda, em ambiente simulado do curso Hashtag. Reduz trabalho manual, tempo de execução e erros de digitação.</p><a href="https://github.com/DCapulot/Automacao-em-python">Código</a> · <a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Valida%C3%A7%C3%A3o%20Certificado%20python.pdf">Certificado</a></div>
+<div class="card"><h3>A Cobra Vai Fumar</h3><p>Jogo da cobra em HTML, CSS e JavaScript com movimentação, comida, detecção de colisões, pontuação, vidas e ranking.</p><a href="https://dcapulot.github.io/A-Cobra-vai-Fumar/">Demo</a> · <a href="https://github.com/DCapulot/A-Cobra-vai-Fumar">Código</a></div>
+<div class="card"><h3>Snake-2</h3><p>Versão 2 de A Cobra Vai Fumar, com melhorias em pontuação, vidas, tempo e controle de pausa.</p><a href="https://dcapulot.github.io/Snake-Kai/">Demo</a> · <a href="https://github.com/DCapulot/Snake-Kai">Código</a></div>
+<div class="card"><h3>SpaceDodgerGame</h3><p>Jogo 2D em canvas com movimentação em tempo real e obstáculos.</p><a href="https://dcapulot.github.io/SpaceDodgerGame/">Demo</a> · <a href="https://github.com/DCapulot/SpaceDodgerGame">Código</a></div>
+<div class="card"><h3>Calculadora 2DEGJ</h3><p>Calculadora web em grupo (2026) com soma, subtração, multiplicação, divisão e resto, validação das entradas, proteção contra divisão por zero e botão de limpar.</p><a href="https://dcapulot.github.io/Calculadora-2DEGJ/">Demo</a> · <a href="https://github.com/DCapulot/Calculadora-2DEGJ">Código</a></div>
+<div class="card"><h3>Two-D-For-Life</h3><p>Site para cálculo de IMC, com classificação do índice, informações de saúde e formulário dinâmico.</p><a href="https://dcapulot.github.io/Two-D-For-Life/">Demo</a> · <a href="https://github.com/DCapulot/Two-D-For-Life">Código</a></div>
+</div>
+<p style="margin-top:16px"><a href="https://github.com/DCapulot?tab=repositories">Ver todos os repositórios no GitHub →</a></p>
+</section>
+
+<!-- 5. COMPETÊNCIAS -->
+<section id="competencias">
+<h2>Competências</h2>
+<div class="grid" style="margin-top:16px">
+<div class="card"><h3>Segurança</h3><ul class="chips"><li>Fundamentos de cibersegurança</li><li>Engenharia social</li><li>Segurança de redes e da informação</li></ul></div>
+<div class="card"><h3>Linguagens de programação</h3><ul class="chips"><li>Python</li><li>JavaScript</li><li>Java</li><li>C</li></ul></div>
+<div class="card"><h3>Linguagem de marcação</h3><ul class="chips"><li>HTML</li></ul></div>
+<div class="card"><h3>Linguagem de estilo</h3><ul class="chips"><li>CSS</li></ul></div>
+<div class="card"><h3>Bancos de dados</h3><ul class="chips"><li>SQL</li><li>MySQL</li><li>PostgreSQL</li></ul></div>
+<div class="card"><h3>Dados e Machine Learning</h3><ul class="chips"><li>pandas</li><li>scikit-learn</li><li>XGBoost</li><li>SMOTE</li><li>GridSearchCV</li><li>SHAP</li></ul></div>
+<div class="card"><h3>Redes e infraestrutura</h3><ul class="chips"><li>Redes de computadores</li><li>TCP/IP</li><li>IPv4</li><li>DNS</li><li>DHCP</li><li>HTTP</li><li>SSH</li><li>Computação em nuvem</li><li>Sistemas de comunicação</li><li>Sistemas distribuídos</li></ul></div>
+<div class="card"><h3>Sistemas operacionais</h3><ul class="chips"><li>Linux (Mint)</li><li>Windows</li><li>PowerShell</li><li>Android</li><li>Virtualização e máquinas virtuais</li></ul></div>
+<div class="card"><h3>Hardware e embarcados</h3><ul class="chips"><li>Arquitetura de computadores</li><li>Microprocessadores</li><li>Sistemas operacionais embarcados</li><li>Internet das Coisas (IoT)</li><li>Automação</li></ul></div>
+<div class="card"><h3>Ferramentas de desenvolvimento</h3><ul class="chips"><li>Git</li><li>GitHub</li><li>VS Code</li><li>Docker</li><li>Kodular</li></ul></div>
+<div class="card"><h3>Escritório, design e multimídia</h3><ul class="chips"><li>Excel e Power Query</li><li>Word</li><li>PowerPoint</li><li>Access</li><li>LibreOffice</li><li>Canva</li><li>Multimídia</li></ul></div>
+<div class="card"><h3>Ferramentas de IA</h3><ul class="chips"><li>ChatGPT</li><li>Google Gemini</li><li>Microsoft Copilot</li><li>Gamma App</li><li>NotebookLM</li></ul></div>
+<div class="card"><h3>Idiomas</h3><ul class="chips"><li>Português (nativo)</li><li>Inglês (intermediário)</li></ul></div>
+</div>
+</section>
+
+<!-- 6. CERTIFICADOS -->
+<section id="certificados">
+<h2>Cursos e certificados</h2>
+
+<h3 class="grupo">Cibersegurança, redes e sistemas</h3>
+<ul class="certs">
+<li><div><strong>Base fundamental: Virtualização</strong><span class="meta">SecDay · 4h · 23/10/2026</span></div><span class="verlinks"><a href="https://academy.secday.com.br/verificar/DQOcTMV8gL">Verificar</a></span></li>
+<li><div><strong>Base fundamental: Linux, Redes e Windows</strong><span class="meta">SecDay · out/2026</span></div><span class="verlinks"><a href="https://academy.secday.com.br/verificar/QYcKo7omSd">Linux</a><a href="https://academy.secday.com.br/verificar/Qv2GwydfSz">Redes</a><a href="https://academy.secday.com.br/verificar/StuFG67zTD">Windows</a></span></li>
+<li><div><strong>Webinar: Cibersegurança na Era da Inteligência Artificial</strong><span class="meta">EBAC · 1h · 24/09/2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Imagens/certificados/pdf/Webinar-Ciberseguranca-IA-EBAC.pdf">Ver certificado</a><a href="https://static.lms.ebaconline.com.br/certs/webinar/027367e1-9082-4737-b887-98cc8db4f8c7/original.pdf?1790361257477">Link direto</a></span></li>
+<li><div><strong>Princípios da Cibersegurança</strong><span class="meta">DIO · 2h · 10/09/2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Principios%20de%20Ciberseguran%C3%A7a.pdf">Ver certificado</a></span></li>
+<li><div><strong>Tópicos em Engenharia Social</strong><span class="meta">DIO · 1h · 10/09/2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Topicos%20em%20Engenharia%20Social.pdf">Ver certificado</a></span></li>
+</ul>
+
+<h3 class="grupo">Programação, dados e IA</h3>
+<ul class="certs">
+<li><div><strong>Visualização Avançada de Dados com Python</strong><span class="meta">DIO · 1h · 07/09/2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Visualizacao%20Avancada%20de%20Dados%20com%20Python.pdf">Ver certificado</a></span></li>
+<li><div><strong>Técnicas de Engenharia de Prompt</strong><span class="meta">DIO · 2h · 15/07/2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Tecnicas%20de%20Engenharia%20de%20Prompt.pdf">Ver certificado</a></span></li>
+<li><div><strong>Jornada Python</strong><span class="meta">Hashtag Treinamentos · 2026</span></div><span class="verlinks"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Documentos/pdf/Valida%C3%A7%C3%A3o%20Certificado%20python.pdf">Ver certificado</a></span></li>
+</ul>
+
+<p style="margin-top:16px"><a href="https://drive.google.com/drive/folders/1WcE7MRyQQRpuB3-tyc_OvyvzOruIL2rK?usp=sharing">Todos os certificados →</a></p>
+</section>
+
+<!-- 7. EXPERIÊNCIA ACADÊMICA -->
+<section id="experiencia">
+<h2>Experiência acadêmica</h2>
+<div class="grid" style="margin-top:16px">
+<article class="card"><h3>Hacktown 2024 (participação online)</h3><p class="note">Evento de tecnologia e inovação · 2024</p><p>Acompanhei palestras e painéis sobre tecnologia, inovação e empreendedorismo no evento, referência no Brasil. Ampliei meu conhecimento sobre as tendências do mercado.</p></article>
+<article class="card"><h3>Visita técnica à área de TI da Anhanguera Niterói</h3><p class="note">Atividade acadêmica · 2024</p><p>Conheci a infraestrutura, os equipamentos e o funcionamento do setor de TI, relacionando o conteúdo da graduação com a prática de suporte e gestão de tecnologia em uma instituição de ensino.</p></article>
+<article class="card"><h3>Webinar: Cibersegurança na Era da IA</h3><p class="note">EBAC · 1h · 24/09/2026</p><p>Webinar com Gabriel Pato, Alan Dantas e Pedro Brocaldi sobre deepfakes, golpes e fraudes impulsionados por IA, riscos do vibe coding, engenharia social e boas práticas de segurança no uso de ferramentas de IA.</p><div class="links"><a href="https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/Portfolio/site/Imagens/certificados/pdf/Webinar-Ciberseguranca-IA-EBAC.pdf">Ver certificado</a></div></article>
+</div>
+</section>
+
+<!-- 8. ESTUDO -->
+<section id="estudo">
+<h2>Atualmente estudando</h2>
+<ul class="chips grande" style="margin-top:16px"><li>Cibersegurança</li><li>Hacking e Pentest</li><li>Investigação Digital</li><li>Linux</li><li>Redes de Computadores</li><li>AWS</li><li>Machine Learning</li><li>React</li><li>Inglês avançado</li></ul>
+
+</section>
+
+<!-- 9. CONTATO -->
+<section id="contato">
+<h2>Contato</h2>
+<p class="sub">Aberto a conversas com recrutadores e profissionais de segurança.</p>
+<div class="btns">
+<a class="btn primary" href="mailto:davidcapulot2025@gmail.com">davidcapulot2025@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/david-capulot-corr%C3%AAa-7865bb2a4/">LinkedIn</a>
+<a class="btn" href="https://github.com/DCapulot">GitHub</a>
+<a class="btn" href="https://wa.me/5521965201025">WhatsApp</a>
+<a class="btn" href="https://www.instagram.com/david_capulot/">Instagram</a>
+</div>
+<p class="sub" style="margin-bottom:8px">Currículo:</p>
+<div class="btns">
+<a class="btn" href="https://docs.google.com/document/d/1Fp1r3EgyPFsoufWaV4LVD4zfZk0xy-cH/edit?usp=sharing">Ver currículo</a>
+<a class="btn" href="https://docs.google.com/document/d/1Fp1r3EgyPFsoufWaV4LVD4zfZk0xy-cH/export?format=pdf">Baixar currículo (PDF)</a>
+</div>
+</section>
+</main>
+<footer><div class="wrap">© <span id="ano">2026</span> David Capulot Corrêa · São Gonçalo, RJ</div></footer>
+<button id="topo" aria-label="Voltar ao topo">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
