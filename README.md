@@ -2,7 +2,7 @@
 
 Portfólio criado para apresentar minha trajetória acadêmica, habilidades, certificados e projetos durante a graduação em Ciência da Computação, com foco em desenvolvimento e Cibersegurança.
 
-🔗 **Acesse o site:** https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/
+🔗 **Acesse o site:** [https://dcapulot.github.io/Portf-lio-David-Capulot-Correa-/](https://dcapulot.github.io/David_Capulot_Correa/)
 
 ---
 
