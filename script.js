@@ -28,9 +28,17 @@ if (topo) {
 
 // Esconde a foto se o arquivo não carregar
 const foto = document.querySelector(".foto");
-if (foto) foto.addEventListener("error", () => foto.remove());
+// Se a foto não carregar, tenta outros lugares comuns; só então esconde
+const fotosAlternativas = ["DavidCapulot.jpeg", "DavidCapulot.jpg", "site/DavidCapulot.jpeg", "site/Minha foto/DavidCapulot.jpeg"];
+if (foto) {
+  foto.addEventListener("error", () => {
+    const proxima = fotosAlternativas.shift();
+    if (proxima) foto.src = proxima;
+    else foto.remove();
+  });
+}
 
-// Galeria de certificados: lê site/Certificados/<pasta>/<arquivos> do repositório
+// Galeria de certificados: lê a pasta de certificados do repositório e agrupa por subpasta
 const GH = { usuario: "DCapulot", repo: "David_Capulot_Correa", pasta: "site/Certificados" };
 const btnCerts = document.getElementById("btn-certs");
 const galeria = document.getElementById("galeria");
@@ -38,21 +46,29 @@ const EXT_IMG = /\.(jpe?g|png|webp|gif|avif)$/i;
 const EXT_PDF = /\.pdf$/i;
 let galeriaCarregada = false;
 
-// Devolve os caminhos relativos a site/Certificados (ex.: "Python/certificado.pdf")
+// Devolve { base, caminhos }: base = pasta de certificados; caminhos = arquivos relativos a ela
 async function listarArquivos() {
   try {
     const r = await fetch(`https://api.github.com/repos/${GH.usuario}/${GH.repo}/git/trees/HEAD?recursive=1`);
     if (!r.ok) throw new Error(r.status);
     const dados = await r.json();
-    const prefixo = GH.pasta + "/";
-    return dados.tree
-      .filter((i) => i.type === "blob" && i.path.startsWith(prefixo))
-      .map((i) => i.path.slice(prefixo.length));
+    const arquivos = dados.tree.filter((i) => i.type === "blob").map((i) => i.path);
+    let base = GH.pasta;
+    if (!arquivos.some((p) => p.startsWith(base + "/"))) {
+      // A pasta mudou de nome ou de lugar: usa a pasta "certificados" que tiver mais arquivos
+      const contagem = {};
+      arquivos.forEach((p) => {
+        const m = p.match(/^((?:.*\/)?certificados)\//i);
+        if (m && (EXT_IMG.test(p) || EXT_PDF.test(p))) contagem[m[1]] = (contagem[m[1]] || 0) + 1;
+      });
+      base = Object.keys(contagem).sort((a, b) => contagem[b] - contagem[a])[0] || base;
+    }
+    return { base, caminhos: arquivos.filter((p) => p.startsWith(base + "/")).map((p) => p.slice(base.length + 1)) };
   } catch {
-    // Plano B: lista manual em site/Certificados/lista.json (["Python/a.pdf","Cyber/b.jpg"])
+    // Plano B: lista manual em <pasta>/lista.json (["Python/a.pdf","Cyber/b.jpg"])
     const r = await fetch(`${GH.pasta}/lista.json`);
     if (!r.ok) throw new Error(r.status);
-    return r.json();
+    return { base: GH.pasta, caminhos: await r.json() };
   }
 }
 
@@ -66,7 +82,7 @@ function aviso(texto) {
 const limpar = (t) => t.replace(/\.[^.]+$/, "").replace(/[-_]+/g, " ").trim();
 const ordenar = (a, b) => a.localeCompare(b, "pt-BR", { numeric: true });
 
-function montarGaleria(caminhos) {
+function montarGaleria({ base, caminhos }) {
   const grupos = new Map();
   caminhos
     .filter((c) => EXT_IMG.test(c) || EXT_PDF.test(c))
@@ -83,7 +99,7 @@ function montarGaleria(caminhos) {
     const bloco = document.createElement("section");
     bloco.className = "cert-grupo";
     const titulo = document.createElement("h4");
-    titulo.textContent = grupo.replace(/[_]+/g, " ").trim();
+    titulo.textContent = grupo.replace(/_+/g, " ").trim();
     const lista = document.createElement("div");
     lista.className = "cert-lista";
 
@@ -91,7 +107,7 @@ function montarGaleria(caminhos) {
       const nome = limpar(arquivo);
       const a = document.createElement("a");
       a.className = "cert-item";
-      a.href = `${GH.pasta}/${caminho.split("/").map(encodeURIComponent).join("/")}`;
+      a.href = `${base}/${caminho.split("/").map(encodeURIComponent).join("/")}`;
       a.target = "_blank";
       a.rel = "noopener";
       if (EXT_IMG.test(arquivo)) {
